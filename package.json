@@ -1,0 +1,33 @@
+{
+  "name": "postcss-pargin-css",
+  "version": "0.0.0",
+  "description": "PostCSS plugin for supporting 'pargin' property in css",
+  "keywords": ["postcss", "css", "postcss-plugin", "postcss-pargin-css"],
+  "scripts": {
+    "unit": "node --test index.test.js",
+    "test": "npm run unit && eslint ."
+  },
+  "author": "max <m.d.mihailik@gmail.com>",
+  "license": "MIT",
+  "repository": "0Viox0/postcss-pargin-css",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "peerDependencies": {
+    "postcss": "^8.4.27"
+  },
+  "devDependencies": {
+    "eslint": "^8.47.0",
+    "postcss": "^8.4.27"
+  },
+  "eslintConfig": {
+    "parserOptions": {
+      "ecmaVersion": 2017
+    },
+    "env": {
+      "node": true,
+      "es6": true
+    },
+    "extends": ["eslint:recommended"]
+  }
+}
