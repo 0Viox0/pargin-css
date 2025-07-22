@@ -20,11 +20,11 @@ async function run(
 }
 
 test('basic convertion from pargin to padding and margin', async () => {
-    await run({ pargin: '2px 2px, 0 0' }, 'margin: 0 0;padding: 2px 2px');
+    await run({ pargin: '2px 2px, 0 0' }, 'margin: 0 0;\npadding: 2px 2px');
 });
 
 test('basic convertion from madding to padding and margin', async () => {
-    await run({ pargin: '2px 2px, 0 0' }, 'margin: 0 0;padding: 2px 2px');
+    await run({ pargin: '2px 2px, 0 0' }, 'margin: 0 0;\npadding: 2px 2px');
 });
 
 test('basic convertion from pargin to padding and margin with additional properties', async () => {
@@ -39,9 +39,12 @@ test('empty pargin value', async () => {
 });
 
 test('single value pargin', async () => {
-    await run({ pargin: '10px' }, 'margin: 10px;padding: 10px');
+    await run({ pargin: '10px' }, 'margin: 10px;\npadding: 10px');
 });
 
 test('malformed pargin (missing comma)', async () => {
-    await run({ pargin: '10px 20px' }, 'margin: 10px 20px;padding: 10px 20px');
+    await run(
+        { pargin: '10px 20px' },
+        'margin: 10px 20px;\npadding: 10px 20px'
+    );
 });

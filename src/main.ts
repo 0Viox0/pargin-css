@@ -1,41 +1,20 @@
 import { PluginCreator } from 'postcss';
 import { PluginOptions } from './types';
+import { insertPaddingAndMargin, parseMarginAndPadding } from './utils';
 
 const pluginCreator: PluginCreator<PluginOptions> = () => {
     return {
         postcssPlugin: 'postcss-pargin-css',
         Declaration: {
             pargin: (decl) => {
-                let paddingValue, marginValue;
+                const [paddingValue, marginValue] = parseMarginAndPadding(decl);
 
-                if (decl.value.includes(',')) {
-                    [paddingValue, marginValue] = decl.value.split(',');
-                } else {
-                    [paddingValue, marginValue] = [decl.value, decl.value];
-                }
-
-                if (paddingValue) {
-                    decl.after(`padding: ${paddingValue.trim()}`);
-                }
-
-                if (marginValue) {
-                    decl.after(`margin: ${marginValue.trim()}`);
-                }
-
-                decl.remove();
+                insertPaddingAndMargin(decl, paddingValue, marginValue);
             },
             madding: (decl) => {
-                const [marginValue, paddingValue] = decl.value.split(',');
+                const [marginValue, paddingValue] = parseMarginAndPadding(decl);
 
-                if (paddingValue) {
-                    decl.after(`padding: ${paddingValue.trim()}`);
-                }
-
-                if (marginValue) {
-                    decl.after(`margin: ${marginValue.trim()}`);
-                }
-
-                decl.remove();
+                insertPaddingAndMargin(decl, paddingValue, marginValue);
             },
         },
     };
