@@ -1,7 +1,7 @@
 import postcss, { Result } from 'postcss';
 import postcssJs, { CssInJs } from 'postcss-js';
-import { PluginOptions } from '../types';
-import parginCssPlugin from '../main';
+import { PluginOptions } from '../lib/types';
+import parginCssPlugin from '../lib/main';
 
 describe('pargin-css-plugin', () => {
     async function run(

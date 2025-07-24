@@ -11,8 +11,7 @@
     "scripts": {
         "build": "rm -rf dist && rollup -c",
         "test": "jest",
-        "publishLocally": "npm run test && npm link && npm list -g",
-        "publishLocally:noTests": "npm run build && npm link && npm list -g",
+        "publishLocally": "npm run build && npm run test && npm link && npm list -g",
         "lint": "eslint ."
     },
     "author": "max <m.d.mihailik@gmail.com>",
@@ -28,8 +27,8 @@
     "module": "./dist/index.mjs",
     "exports": {
         ".": {
-            "require": "./dist/index.js",
-            "import": "./dist/index.esm.js",
+            "require": "./dist/index.cjs",
+            "import": "./dist/index.mjs",
             "types": "./dist/types/index.d.ts"
         }
     },

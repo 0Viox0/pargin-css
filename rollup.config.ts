@@ -3,15 +3,15 @@ import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
 
 export default {
-    input: 'src/main.ts',
+    input: 'lib/main.ts',
     output: [
         {
-            file: 'dist/index.js',
+            file: 'dist/index.cjs',
             format: 'cjs',
             sourcemap: true,
         },
         {
-            file: 'dist/index.esm.js',
+            file: 'dist/index.mjs',
             format: 'esm',
             sourcemap: true,
         },
