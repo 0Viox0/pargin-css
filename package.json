@@ -1,6 +1,6 @@
 {
-    "name": "postcss-pargin-css",
-    "version": "0.0.0",
+    "name": "pargin-css",
+    "version": "0.0.1",
     "description": "PostCSS plugin for supporting 'pargin' and 'madding' properties in css",
     "keywords": [
         "postcss",
@@ -16,7 +16,7 @@
     },
     "author": "max <m.d.mihailik@gmail.com>",
     "license": "MIT",
-    "repository": "0Viox0/postcss-pargin-css",
+    "repository": "0Viox0/pargin-css",
     "engines": {
         "node": ">=18.0.0"
     },

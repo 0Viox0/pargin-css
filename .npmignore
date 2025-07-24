@@ -1,9 +1,18 @@
-yarn-error.log
-npm-debug.log
-package-lock.json
-yarn.lock
+__tests__/
+lib/
+node_modules/
 
-*.test.js
-.github
-.editorconfig
+*.ts
+!dist/**/*.d.ts         # allow type declarations
+tsconfig*.json
+rollup.config.ts
+jest.config.ts
+.eslintrc
+*.test.*
+.vscode/
+.nyc_output/
 coverage/
+.env*
+
+README_*.md
+*.log
