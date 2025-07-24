@@ -3,28 +3,26 @@ import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
 
 export default {
-    input: 'src/main.ts', // Your entry point
+    input: 'src/main.ts',
     output: [
         {
             file: 'dist/index.js',
-            format: 'cjs', // CommonJS for Node
+            format: 'cjs',
             sourcemap: true,
         },
         {
             file: 'dist/index.esm.js',
-            format: 'esm', // ES Modules for browsers
+            format: 'esm',
             sourcemap: true,
         },
     ],
     plugins: [
-        resolve(), // Resolves node_modules
-        commonjs(), // Converts CommonJS to ES6
+        resolve(),
+        commonjs(),
         typescript({
-            // TypeScript compilation
             tsconfig: './tsconfig.json',
             declaration: true,
             declarationDir: 'dist/types',
         }),
     ],
-    external: ['lodash'], // Example of external dependencies
 };
