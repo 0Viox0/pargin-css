@@ -18,7 +18,6 @@
 - [⚙️ Configuration](#️-configuration)
   - [📦 Vite](#-vite-configuration)
   - [🧰 Webpack](#-webpack-configuration)
-  - [🧾 PostCSS Config](#-postcssconfigjs)
 - [🚀 Usage](#-usage)
 - [📄 License](#-license)
 
@@ -49,21 +48,17 @@ pnpm add --save-dev pargin-css
 
 ### 📦 Vite Configuration
 
-```ts
-// vite.config.js
-import { defineConfig } from 'vite'
-import postcss from 'rollup-plugin-postcss'
-import parginCss from 'pargin-css'
+Vite automatically detects postcss configs <br>
+Create <i>postcss.config.js<i> and add the folowing:
 
-export default defineConfig({
-  plugins: [
-    postcss({
-      plugins: [
-        parginCss() // Add plugin with optional config
-      ]
-    })
-  ]
-})
+```ts
+// postcss.config.js
+import postcssPargin from "pargin-css";
+
+export default {
+  plugins: [postcssPargin()],
+};
+
 ```
 
 ---
@@ -109,23 +104,6 @@ module.exports = {
   }
 }
 ```
-
----
-
-### 🪄 postcss.config.js
-
-```js
-// postcss.config.js
-module.exports = {
-  plugins: [
-    require('pargin-css')({
-      // Optional configuration
-    })
-  ]
-}
-```
-
----
 
 ## 🚀 Usage
 
