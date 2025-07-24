@@ -13,6 +13,6 @@ jest.config.ts
 .nyc_output/
 coverage/
 .env*
+.prettierrc
 
-README_*.md
 *.log

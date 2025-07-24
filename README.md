@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🎨 Pargin CSS ✨  
+# 🎨 Pargin CSS ✨
 **A PostCSS plugin that supercharges your CSS with `pargin` and `madding` shorthand properties**
 
 [![PostCSS](https://img.shields.io/badge/PostCSS-%23DD3A0A.svg?style=flat&logo=postcss&logoColor=white)](https://postcss.org/)
@@ -18,7 +18,7 @@
 - [⚙️ Configuration](#️-configuration)
   - [📦 Vite](#-vite-configuration)
   - [🧰 Webpack](#-webpack-configuration)
-  - [🪄 PostCSS Config](#-postcssconfigjs)
+  - [🧾 PostCSS Config](#-postcssconfigjs)
 - [🚀 Usage](#-usage)
 - [📄 License](#-license)
 
