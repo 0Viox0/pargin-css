@@ -9,9 +9,11 @@
         "postcss-pargin-css"
     ],
     "scripts": {
-        "build": "tsc -p tsconfig.json",
+        "build": "rm -rf dist && rollup -c",
         "lint": "eslint .",
-        "test": "npm run build && node --test dist/__tests__/main.test.js"
+        "test": "npm run build && node --test dist/__tests__/main.test.js",
+        "publishLocally": "npm run test && npm link && npm list -g",
+        "publishLocally:noTests": "npm run build && npm link && npm list -g"
     },
     "author": "max <m.d.mihailik@gmail.com>",
     "license": "MIT",
@@ -22,13 +24,27 @@
     "peerDependencies": {
         "postcss": "^8.4.27"
     },
+    "main": "./dist/index.cjs",
+    "module": "./dist/index.mjs",
+    "exports": {
+        ".": {
+            "require": "./dist/index.js",
+            "import": "./dist/index.esm.js",
+            "types": "./dist/types/index.d.ts"
+        }
+    },
     "devDependencies": {
+        "@rollup/plugin-commonjs": "^28.0.6",
+        "@rollup/plugin-node-resolve": "^16.0.1",
+        "@rollup/plugin-typescript": "^12.1.4",
         "@types/node": "^24.0.15",
         "@types/postcss-js": "^4.0.4",
         "eslint": "^8.47.0",
         "postcss": "^8.4.27",
         "postcss-js": "^4.0.1",
+        "rollup": "^4.45.1",
         "ts-node": "^10.9.2",
+        "tslib": "^2.8.1",
         "typescript": "^5.8.3"
     },
     "eslintConfig": {
